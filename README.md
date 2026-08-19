@@ -24,32 +24,14 @@ and a metric-aligned training objective, integrated by heterogeneous stacking. I
    systematic combination outperforms any single model.
 
 EnzyRank is an independent successor to *EnzyStack* (v1) and reuses v1's out-of-fold predictions as
-frozen ensemble members, so every number below is a strict improvement over an already-strong system.
-The controlled ablation supporting these claims is in a separate study, `../EnzyRank_ablation/`.
+frozen ensemble members. The controlled ablation supporting these claims is in a separate study,
+`../EnzyRank_ablation/`.
 
-## Headline result
+## Model overview
 
-Leakage-free per-fold stacked ensemble (per held-out fold, non-negative blend weights are fit on the
-other 9 folds' out-of-fold predictions only). Regenerate with `python scripts/final_report.py`.
+![EnzyRank model and evaluation design](docs/figures/Fig1.jpg)
 
-| Parameter | Metric | **EnzyRank** | v1 EnzyStack | CataPro (SOTA) | Rel. margin |
-|-----------|--------|-------------:|-------------:|---------------:|:-----------:|
-| **kcat**    | PCC ↑  | **0.5233** | 0.508 | 0.497 | **+5.3%** ✅ |
-|             | SCC ↑  | **0.5235** |   —   | 0.495 | **+5.8%** ✅ |
-|             | RMSE ↓ | **1.3061** |   —   | 1.329 | +1.7% ✅ |
-| **Km**      | PCC ↑  | **0.6470** | 0.642 | 0.633 | +2.2% ✅ |
-|             | SCC ↑  | **0.6439** |   —   | 0.629 | +2.4% ✅ |
-|             | RMSE ↓ | **0.9850** |   —   | 0.998 | +1.3% ✅ |
-| **kcat/Km** | PCC ↑  | **0.4288** | 0.407 | 0.413 | **+3.8%** ✅ |
-|             | SCC ↑  | **0.4303** |   —   | 0.416 | **+3.4%** ✅ |
-|             | RMSE ↓ | **1.6052** |   —   | 1.619 | +0.9% ✅ |
-
-Correlations in log10 space; Km in mM (units per `data/README.md`). Numbers use pooled out-of-fold
-aggregation. v1 EnzyStack beat CataPro on 6/9 cells (losing all of kcat/Km); **EnzyRank wins 9/9**.
-kcat (+5.3% / +5.8%) and kcat/Km (+3.8% / +3.4%) both clear a +3% margin on *both* correlation
-metrics; Km reaches +2.2% / +2.4% (it is substrate-dominated and near the benchmark's frozen-feature
-ceiling). The win is **robust to the aggregation convention**: EnzyRank also beats CataPro on all 9
-cells under CataPro's own per-fold-mean convention (see `docs/RESULTS.md`).
+*Figure 1. EnzyRank model architecture and evaluation design.*
 
 ## Method
 
