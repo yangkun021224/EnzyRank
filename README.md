@@ -117,7 +117,7 @@ To skip feature extraction, download `cache.tar.gz` to the repository root and e
 archive creates the complete `cache/` directory, including the pooled and per-residue HDF5 features
 and the small substrate/ChemBERTa NPZ caches.
 
-**Google Drive archive:** _Link pending._ <!-- GOOGLE_DRIVE_CACHE_URL -->
+**Google Drive archive:** [Download `cache.tar.gz`](https://drive.google.com/file/d/19EGo5V4qqzF35-4WNcCZuykS7tCorISA/view?usp=sharing)
 
 ```bash
 tar -xzf cache.tar.gz
