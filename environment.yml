@@ -1,0 +1,26 @@
+# Reproducible environment for EnzyRank.
+# Tested on Ubuntu, NVIDIA RTX 5090 (sm_120), CUDA 12.8, PyTorch 2.8.
+name: enzyrank
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+      - --extra-index-url https://download.pytorch.org/whl/cu128
+      - torch==2.8.0
+      - numpy
+      - pandas
+      - scipy
+      - scikit-learn
+      - lightgbm
+      - transformers        # any recent version; only needed for feature extraction (cached here)
+      - tokenizers
+      - sentencepiece
+      - rdkit
+      - h5py
+      - einops
+      - pyyaml
+      - tqdm
+      # For the (optional) ESM-C feature upgrade on an open-network machine:
+      #   pip install esm   # EvolutionaryScale SDK; see src/features/protein_esmc.py

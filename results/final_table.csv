@@ -1,0 +1,10 @@
+parameter,metric,EnzyRank_pooled,EnzyRank_perfold_mean,v1_EnzyStack_PCC,CataPro,rel_margin_pooled_%,beats_CataPro
+kcat,PCC,0.5233,0.519,0.508,0.497,5.3,True
+kcat,SCC,0.5235,0.5149,,0.495,5.8,True
+kcat,RMSE,1.3061,1.302,,1.329,1.7,True
+km,PCC,0.647,0.6447,0.642,0.633,2.2,True
+km,SCC,0.6439,0.641,,0.629,2.4,True
+km,RMSE,0.985,0.9845,,0.998,1.3,True
+kcat_km,PCC,0.4288,0.4249,0.407,0.413,3.8,True
+kcat_km,SCC,0.4303,0.4275,,0.416,3.4,True
+kcat_km,RMSE,1.6052,1.6043,,1.619,0.9,True

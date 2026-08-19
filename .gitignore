@@ -1,0 +1,24 @@
+# EnzyRank — git tracks code, data, configs, docs, out-of-fold predictions, small caches and the
+# bundled ChemBERTa model. Large, fully-regenerable artifacts stay on disk but are excluded from git
+# so the repository remains deployable. Everything excluded here is either downloadable
+# (pretrained/README.md) or regenerable (scripts/extract_*.py + reproduce.sh).
+
+# --- Regenerable feature caches (HDF5 embeddings) ---
+# Excluded from git: the per-residue caches are multi-GB and the pooled caches exceed GitHub's
+# 100 MB file limit. All are regenerable via scripts/extract_*.py. They stay on disk for local use;
+# the small .npz caches (substrate fingerprints, ChemBERTa means) ARE tracked.
+cache/*.h5
+cache/**/*.h5
+
+# --- Large downloaded pretrained encoders (> 1 GB; see pretrained/README.md) ---
+pretrained/prot_t5_xl_half_uniref50-enc/
+pretrained/esm2_t33_650M_UR50D/
+pretrained/ESMC-600M/
+# (pretrained/ChemBERTa-77M-MTR/ IS tracked — it is only 14 MB and bundled)
+
+# --- Python / environment noise ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.DS_Store

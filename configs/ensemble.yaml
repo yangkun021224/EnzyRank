@@ -1,0 +1,47 @@
+# V2 final per-parameter stacked ensemble (leakage-free per-fold NNLS stack).
+# Members from baseline_v1_oof/ (v1) and results/oof/ (V2 new).
+# V2-new members:
+#   I2_crossattn_corr_prott5[_s123/_s456/_s789]  correlation-aligned NN (N2), 4 seeds
+#   I4_lightgbm_retr   retrieval-augmented GBDT (N4) — helps Km only
+#   I4_extratrees      ExtraTrees on the full feature vector (diverse tree family)
+base_models:
+  kcat:
+    - I4_lightgbm
+    - I4_lightgbm_te
+    - I4_lightgbm_te3
+    - I4_ridge
+    - I2_crossattn_prott5
+    - I2_crossattn_prott5_s123
+    - I2_crossattn_corr_prott5
+    - I2_crossattn_corr_prott5_s123
+    - I2_crossattn_corr_prott5_s456
+    - I2_crossattn_corr_prott5_s789
+    - I4_lightgbm_allplm
+    - I2_crossattn_corr_esmc
+  km:
+    - I4_lightgbm
+    - I4_lightgbm_te
+    - I4_lightgbm_te3
+    - I4_ridge
+    - I4_extratrees
+    - I4_lightgbm_retr
+    - I2_crossattn_prott5
+    - I2_crossattn_prott5_s123
+    - I2_crossattn_corr_prott5
+    - I2_crossattn_corr_prott5_s123
+    - I2_crossattn_corr_prott5_s456
+    - I2_crossattn_corr_prott5_s789
+  kcat_km:
+    - I4_lightgbm
+    - I4_lightgbm_te
+    - I4_lightgbm_te3
+    - I4_ridge
+    - I4_extratrees
+    - composed
+    - I2_crossattn_prott5
+    - I2_crossattn_prott5_s123
+    - I2_crossattn_corr_prott5
+    - I2_crossattn_corr_prott5_s123
+    - I2_crossattn_corr_prott5_s456
+    - I2_crossattn_corr_prott5_s789
+    - I2_crossattn_corr_esmc
