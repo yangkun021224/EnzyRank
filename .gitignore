@@ -10,6 +10,9 @@
 cache/*.h5
 cache/**/*.h5
 
+# Local distribution archive for the complete precomputed cache (shared via Google Drive)
+/cache.tar.gz
+
 # --- Large downloaded pretrained encoders (> 1 GB; see pretrained/README.md) ---
 pretrained/prot_t5_xl_half_uniref50-enc/
 pretrained/esm2_t33_650M_UR50D/

@@ -113,11 +113,18 @@ build from the manifest; everything else needed to reproduce is in this reposito
 
 ### Optional precomputed feature cache
 
-To skip feature extraction, download the complete precomputed `cache/` directory and place it at the
-repository root (so that `EnzyRank/cache/esmc_residue.h5` exists). The shared folder contains the
-pooled and per-residue HDF5 features plus the small substrate/ChemBERTa NPZ caches.
+To skip feature extraction, download `cache.tar.gz` to the repository root and extract it there. The
+archive creates the complete `cache/` directory, including the pooled and per-residue HDF5 features
+and the small substrate/ChemBERTa NPZ caches.
 
-**Google Drive folder:** _Link pending._ <!-- GOOGLE_DRIVE_CACHE_URL -->
+**Google Drive archive:** _Link pending._ <!-- GOOGLE_DRIVE_CACHE_URL -->
+
+```bash
+tar -xzf cache.tar.gz
+```
+
+After extraction, `EnzyRank/cache/esmc_residue.h5` should exist. On Windows, 7-Zip can extract the
+same archive; keep the resulting `cache` directory at the repository root.
 
 The HDF5 files remain excluded from Git because they are regenerable and exceed normal Git hosting
 limits. The small NPZ caches are also included in the Git repository, so downloading this folder is
