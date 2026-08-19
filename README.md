@@ -127,7 +127,7 @@ After extraction, `EnzyRank/cache/esmc_residue.h5` should exist. On Windows, 7-Z
 same archive; keep the resulting `cache` directory at the repository root.
 
 The HDF5 files remain excluded from Git because they are regenerable and exceed normal Git hosting
-limits. The small NPZ caches are also included in the Git repository, so downloading this folder is
+limits. The small NPZ caches are also included in the Git repository, so downloading this archive is
 optional for the instant Tier 1 reproduction below.
 
 ## Reproduce
